@@ -1,0 +1,11 @@
+{% extends 'forum/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <h1>New Answer</h1>
+    <form method="post" class="post-form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-primary btn-comment" type="submit">Add Answer</button>
+    </form>
+    <script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}
